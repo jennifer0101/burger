@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+        <div class"col-sm-12">
+            <img src="../public/assets/img/burg.png" alt="happy burger">
+
+            <h1>Eat-Da-Burger!</h1>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <!--Undevoured burgers-->
+                <ul>
+                    {{#each burgers}}
+                        {{#unless this.devoured}}
+                            {{this.id}}. {{this.burger_name}}
+                        {{/unless}}
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="col-sm-6">
+                <!--Devoured burgers-->
+                <ul>
+                    {{#each burgers}}
+                        {{#if this.devoured}}
+                            {{this.id}}. {{this.burger_name}}
+                        {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <form>
+                <div class="form-group">
+                    <div class="form-group">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <h5>Enter a burger you want to eat! Then click the submit button.</h5>
+        </div>
+    </div>
+</div>
