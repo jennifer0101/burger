@@ -1,28 +1,36 @@
 <div class="container">
     <div class="row">
-        <div class"col-sm-12">
-            <img src="../public/assets/img/burg.png" alt="happy burger">
-
-            <h1>Eat-Da-Burger!</h1>
+        <div class"col-md-12">
+            <img src="/assets/img/burg.png" alt="happy burger">
+            <div id="top">
+                <h1>Eat-Da-Burger!</h1>
+            </div>
         </div>
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-md-6">
                 <!--Undevoured burgers-->
                 <ul>
                     {{#each burgers}}
-                        {{#unless this.devoured}}
-                            {{this.id}}. {{this.burger_name}}
-                        {{/unless}}
+                    {{#unless devoured}}
+                    <div>
+                        {{this.id}}. {{this.burger_name}}
+                    </div>
+                    <form method="POST" action="/burgers/update?_method=PUT" class="button-size">
+                        <input type="hidden" type="text" name="burger_id" value={{this.id}}>
+                        <br>
+                        <button type="submit" class="btn btn-default">Devour It!</button>
+                    </form>
+                    {{/unless}}
                     {{/each}}
                 </ul>
             </div>
-            <div class="col-sm-6">
+            <div class="col-md-6">
                 <!--Devoured burgers-->
                 <ul>
                     {{#each burgers}}
-                        {{#if this.devoured}}
-                            {{this.id}}. {{this.burger_name}}
-                        {{/if}}
+                    {{#if devoured}}
+                    <input class="form-control" type="text" placeholder="{{this.id}}. {{this.burger_name}}" readonly>
+                    {{/if}}
                     {{/each}}
                 </ul>
             </div>
@@ -31,16 +39,16 @@
 </div>
 <div class="container">
     <div class="row">
-        <div class="col-sm-12">
-            <form>
+        <div class="col-md-12">
+            <form id="newBurger">
                 <div class="form-group">
                     <div class="form-group">
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" id="textarea1" rows="1"></textarea>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
-            <h5>Enter a burger you want to eat! Then click the submit button.</h5>
+            <h5 id="enterBurger">Enter a burger you want to eat! Then click the submit button.</h5>
         </div>
     </div>
 </div>

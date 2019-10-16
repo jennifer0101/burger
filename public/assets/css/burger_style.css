@@ -1,0 +1,34 @@
+body {
+    background-color: #ffcb68;
+    font-family: 'Fredoka One', cursive;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    padding: 50px;
+}
+
+#top {
+    text-align: center;
+}
+
+#textarea1 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 25%;
+    padding: 50px;
+}
+
+#newBurger {
+    text-align: center;
+}
+
+#enterBurger {
+    text-align: center;
+    padding: 25px;
+}
