@@ -13,23 +13,33 @@ img {
 
 #top {
     text-align: center;
-    padding-bottom: 25px;
-}
-
-#textarea1 {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    height: 25%;
-    padding: 50px;
-}
-
-#newBurger {
-    text-align: center;
+    padding-bottom: 50px;
 }
 
 #enterBurger {
     text-align: center;
-    padding: 25px;
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+
+#leftBadge {
+    padding: 10px;
+    width: 250px;
+    text-align: left;
+    margin: 5px;
+}
+
+#rightBadge {
+    padding: 10px;
+    width: 250px;
+    text-align: right;
+    margin: 5px;
+}
+
+#devourButton {
+    margin: 5px;
+}
+
+#bottomSubmit {
+    margin-bottom: 200px;
 }
