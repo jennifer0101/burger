@@ -56,7 +56,7 @@ var orm = {
       if (err) {
         throw err;
       }
-
+      //console.log("ORM", result);
       cb(result);
     });
   },

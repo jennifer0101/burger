@@ -12,6 +12,7 @@ var burger = {
     //Cols and vals are arrays
     insertOne: function(cols, vals, cb) {
       orm.insertOne("burgers", cols, vals, function(res) {
+      //console.log("call back", res);
         cb(res);
       });
     },
