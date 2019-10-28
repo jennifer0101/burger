@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row d-flex justify-content-center">
-        <div class"col-lg-12">
+        <div class="col-lg-12">
             <img src="/assets/img/burg.png" alt="happy burger">
             <div id="top">
                 <h1>Eat-Da-Burger!</h1>
@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="row">
-        <div class"col-lg-6">
+        <div class="col-lg-12">
             <div class="row">
                 <!--Undevoured burgers-->
                 {{#each burgers}}
@@ -19,9 +19,9 @@
                     </span>
                 </div>
                 <div class="col-sm-3">
-                    <form action="/api/burgers/update" method="PUT" class="button-size">
-                        <input input type="hidden" name="burger_id" value={{this.id}}>
-                        <button type="submit" class="btn btn-success" id="devourButton">Devour It!</button>
+                    <form class="change-devour">
+                        <input input type="hidden" class="burger_id" type="text" value={{this.id}}>
+                        <button type="submit" class="btn btn-success">Devour It!</button>
                     </form>
                 </div>
                 {{/unless}}
@@ -31,7 +31,7 @@
                     {{#each burgers}}
                     {{#if devoured}}
                         <span class="badge badge-light" id="rightBadge">
-                            <input class="form-control" type="text" placeholder="{{this.id}}. {{this.burger_name}}" readonly>
+                            <input class="form-control" type="text" placeholder="{{this.burger_name}}" readonly>
                         </span>
                     {{/if}}
                     {{/each}}

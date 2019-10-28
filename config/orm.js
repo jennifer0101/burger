@@ -56,7 +56,6 @@ var orm = {
       if (err) {
         throw err;
       }
-      //console.log("ORM", result);
       cb(result);
     });
   },
@@ -70,7 +69,7 @@ var orm = {
     queryString += " WHERE ";
     queryString += condition;
 
-    console.log(queryString);
+    console.log(queryString, "this is query string");
     connection.query(queryString, function(err, result) {
       if (err) {
         throw err;

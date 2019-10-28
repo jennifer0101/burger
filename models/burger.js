@@ -12,18 +12,17 @@ var burger = {
     //Cols and vals are arrays
     insertOne: function(cols, vals, cb) {
       orm.insertOne("burgers", cols, vals, function(res) {
-      //console.log("call back", res);
         cb(res);
       });
     },
     //objColVals is an object specifying columns as object keys with associated values
-    updateOne: function(objColVals, condition, cb) {
-      orm.updateOne("burgers", objColVals, condition, function(res) {
+    updateOne: function(cond, cb) {
+      var condition = "id=" + cond;
+      orm.updateOne("burgers", {devoured: true}, condition, function(res) {
         cb(res);
       });
     },
   };
-  
 
 //Export database functions for the controller (burgerController.js)
 module.exports = burger;
